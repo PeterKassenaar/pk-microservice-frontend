@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Measure distance between US Zipcodes</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <!--      Using[(ngModel)] here-->
+      <p>Enter two valid US Zipcodes:</p>
+      <p>
+        <input type="text"
+               class="form-control-lg"
+               placeholder="Zipcode 1 (ex: 10001)"
+               [(ngModel)]="zipcode1">
+      </p>
+      <p>
+        <input type="text"
+               class="form-control-lg"
+               placeholder="Zipcode 2 (ex: 90001)"
+               [(ngModel)]="zipcode2">
+      </p>
+      <button (click)="calculate()" class="btn btn-info">Get distance</button>
+      &nbsp;
+      <button (click)="clear()" class="btn btn-warning" *ngIf="distance.distance !== -1">
+        Clear
+      </button>
+      <hr>
+
+      <div>
+        <h3>Some example cities/zipcodes</h3>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <td>
+              City
+            </td>
+            <td>
+              Zip
+            </td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              New York
+            </td>
+            <td>
+              10001-10090
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Chicago
+            </td>
+            <td>
+              60007-60027
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Los Angeles
+            </td>
+            <td>
+              90001-90090
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Seattle
+            </td>
+            <td>
+              98101-98117
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Denver
+            </td>
+            <td>
+              80014-80211
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Miami
+            </td>
+            <td>
+              33101-33136
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+    <div class="col">
+      <img src="../assets/zipcode-calculator.png"
+           title="Just a static image. NOT the actual distance between zip codes."
+           alt="Google Maps image"
+           class="img-fluid">
+      <div *ngIf="distance.distance !== -1">
+        <h2>Distance</h2>
+        <p>Distance between
+          <strong>{{ zipcode1 }}</strong>
+          and
+          <strong>{{ zipcode2 }}</strong>
+
+          in kilometer:
+        </p>
+        <h3>
+          {{ distance.distance }}
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
