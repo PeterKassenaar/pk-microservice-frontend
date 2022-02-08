@@ -13,7 +13,7 @@ export class AppComponent {
   zipcode1: string = '';
   zipcode2: string = '';
   // url: string = 'http://localhost:3000/distance/'; // should go in environment DEV-variable
-  url: string = 'https://pk-microservice.herokuapp.com/'; // should go in environment PROD-variable
+  url: string = 'https://pk-microservice.herokuapp.com/distance/'; // should go in environment PROD-variable
   distance: Distance = {distance: -1};
 
 
